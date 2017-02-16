@@ -1,0 +1,4 @@
+[submodule "strusBase"]
+	path = strusBase
+	url = ../strusBase
+	branch = obs
