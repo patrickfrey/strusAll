@@ -26,3 +26,6 @@
 [submodule "strusUtilities"]
 	path = strusUtilities
 	url = ../strusUtilities
+[submodule "strusBindings"]
+	path = strusBindings
+	url = ../strusBindings
