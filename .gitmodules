@@ -14,3 +14,9 @@
 [submodule "strusModule"]
 	path = strusModule
 	url = ../strusModule
+[submodule "strusVector"]
+	path = strusVector
+	url = ../strusVector
+[submodule "strusPattern"]
+	path = strusPattern
+	url = ../strusPattern
