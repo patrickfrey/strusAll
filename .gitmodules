@@ -20,3 +20,9 @@
 [submodule "strusPattern"]
 	path = strusPattern
 	url = ../strusPattern
+[submodule "strusRpc"]
+	path = strusRpc
+	url = ../strusRpc
+[submodule "strusUtilities"]
+	path = strusUtilities
+	url = ../strusUtilities
