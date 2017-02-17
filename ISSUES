@@ -1,0 +1,3 @@
+- boost_LIBRARIES is cummulative, so currently we probe for
+  all libaries in the top-level projects, this draws in
+  libraries like boost_regex in places where it's not needed

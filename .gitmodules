@@ -2,3 +2,15 @@
 	path = strusBase
 	url = ../strusBase
 	branch = obs
+[submodule "strus"]
+	path = strus
+	url = ../strus
+[submodule "strusAnalyzer"]
+	path = strusAnalyzer
+	url = ../strusAnalyzer
+[submodule "strusTrace"]
+	path = strusTrace
+	url = ../strusTrace
+[submodule "strusModule"]
+	path = strusModule
+	url = ../strusModule
