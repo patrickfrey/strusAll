@@ -5,27 +5,36 @@
 [submodule "strus"]
 	path = strus
 	url = ../strus
+	branch = obs
 [submodule "strusAnalyzer"]
 	path = strusAnalyzer
 	url = ../strusAnalyzer
+	branch = obs
 [submodule "strusTrace"]
 	path = strusTrace
 	url = ../strusTrace
+	branch = obs
 [submodule "strusModule"]
 	path = strusModule
 	url = ../strusModule
+	branch = obs
 [submodule "strusVector"]
 	path = strusVector
 	url = ../strusVector
+	branch = obs
 [submodule "strusPattern"]
 	path = strusPattern
 	url = ../strusPattern
+	branch = obs
 [submodule "strusRpc"]
 	path = strusRpc
 	url = ../strusRpc
+	branch = obs
 [submodule "strusUtilities"]
 	path = strusUtilities
 	url = ../strusUtilities
+	branch = obs
 [submodule "strusBindings"]
 	path = strusBindings
 	url = ../strusBindings
+	branch = obs
