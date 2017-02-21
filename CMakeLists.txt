@@ -47,5 +47,4 @@ add_subdirectory( strusPattern )
 endif()
 add_subdirectory( strusRpc )
 add_subdirectory( strusUtilities )
-# disabled, breaks in various ways
-#add_subdirectory( strusBindings )
+add_subdirectory( strusBindings )

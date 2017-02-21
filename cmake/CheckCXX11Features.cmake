@@ -13,6 +13,7 @@
 #  HAS_CXX11_SIZEOF_MEMBER      - sizeof() non-static members
 #  HAS_CXX11_FUNC               - __func__ preprocessor constant
 #  HAS_CXX11_STD_CHRONO         - do we have a working std::chrono
+#  HAS_CXX11_UNIQUE_PTR         - do we have std::unique_ptr
 #
 # Original script by Rolf Eike Beer
 # Modifications by Andreas Weis
@@ -96,6 +97,7 @@ ENDMACRO(CXX11_CHECK_FEATURE)
 #CXX11_CHECK_FEATURE("sizeof_member"      2253 HAS_CXX11_SIZEOF_MEMBER)
 #CXX11_CHECK_FEATURE("__func__"           2340 HAS_CXX11_FUNC)
 CXX11_CHECK_FEATURE("std_chrono"        ""   HAS_CXX11_STD_CHRONO)
+CXX11_CHECK_FEATURE("std::unique_ptr"     ""   HAS_CXX11_UNIQUE_PTR)
 
 SET(CXX11_FEATURE_LIST ${CXX11_FEATURE_LIST} CACHE STRING "C++11 feature support list")
 MARK_AS_ADVANCED(FORCE CXX11_FEATURE_LIST)
