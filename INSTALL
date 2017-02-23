@@ -1,4 +1,6 @@
-git clone --recursive git@github.com:andreasbaumann/strusAll.git
+git clone --recursive git@github.com:PatrickFrey/strusAll.git
+git submodule foreach git checkout master
+git submodule foreach git pull
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release \
