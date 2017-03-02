@@ -1,40 +1,40 @@
 [submodule "strusBase"]
 	path = strusBase
 	url = ../strusBase
-	branch = obs
+	branch = master
 [submodule "strus"]
 	path = strus
 	url = ../strus
-	branch = obs
+	branch = master
 [submodule "strusAnalyzer"]
 	path = strusAnalyzer
 	url = ../strusAnalyzer
-	branch = obs
+	branch = master
 [submodule "strusTrace"]
 	path = strusTrace
 	url = ../strusTrace
-	branch = obs
+	branch = master
 [submodule "strusModule"]
 	path = strusModule
 	url = ../strusModule
-	branch = obs
+	branch = master
 [submodule "strusVector"]
 	path = strusVector
 	url = ../strusVector
-	branch = obs
+	branch = master
 [submodule "strusPattern"]
 	path = strusPattern
 	url = ../strusPattern
-	branch = obs
+	branch = master
 [submodule "strusRpc"]
 	path = strusRpc
 	url = ../strusRpc
-	branch = obs
+	branch = master
 [submodule "strusUtilities"]
 	path = strusUtilities
 	url = ../strusUtilities
-	branch = obs
+	branch = master
 [submodule "strusBindings"]
 	path = strusBindings
 	url = ../strusBindings
-	branch = obs
+	branch = master
