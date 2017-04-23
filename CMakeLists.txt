@@ -53,4 +53,5 @@ if(WITH_STRUS_PATTERN STREQUAL "YES")
 endif()
 add_subdirectory( strusRpc )
 add_subdirectory( strusUtilities )
-add_subdirectory( strusBindings )
+# temporarily disabled
+#add_subdirectory( strusBindings )
