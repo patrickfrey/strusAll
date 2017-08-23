@@ -34,6 +34,10 @@
 	path = strusUtilities
 	url = ../strusUtilities
 	branch = master
+[submodule "papuga"]
+	path = papuga
+	url = ../papuga
+	branch = master
 [submodule "strusBindings"]
 	path = strusBindings
 	url = ../strusBindings
