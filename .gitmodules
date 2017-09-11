@@ -22,10 +22,6 @@
 	path = strusVector
 	url = ../strusVector
 	branch = master
-[submodule "strusPattern"]
-	path = strusPattern
-	url = ../strusPattern
-	branch = master
 [submodule "strusRpc"]
 	path = strusRpc
 	url = ../strusRpc
@@ -33,12 +29,4 @@
 [submodule "strusUtilities"]
 	path = strusUtilities
 	url = ../strusUtilities
-	branch = master
-[submodule "papuga"]
-	path = papuga
-	url = ../papuga
-	branch = master
-[submodule "strusBindings"]
-	path = strusBindings
-	url = ../strusBindings
 	branch = master
