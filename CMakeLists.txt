@@ -54,4 +54,5 @@ endif()
 add_subdirectory( strusRpc )
 add_subdirectory( strusUtilities )
 # temporarily disabled
-#add_subdirectory( strusBindings )
+add_subdirectory( strusBindings )
+
