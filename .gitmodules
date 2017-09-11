@@ -30,3 +30,9 @@
 	path = strusUtilities
 	url = ../strusUtilities
 	branch = master
+[submodule "strusPattern"]
+	path = strusPattern
+	url = https://github.com/patrickfrey/strusPattern
+[submodule "strusBindings"]
+	path = strusBindings
+	url = https://github.com/patrickfrey/strusBindings
