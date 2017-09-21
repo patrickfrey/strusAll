@@ -1,38 +1,40 @@
 [submodule "strusBase"]
 	path = strusBase
-	url = ../strusBase
+	url = https://github.com/patrickfrey/strusBase
 	branch = master
 [submodule "strus"]
 	path = strus
-	url = ../strus
+	url = https://github.com/patrickfrey/strus
 	branch = master
 [submodule "strusAnalyzer"]
 	path = strusAnalyzer
-	url = ../strusAnalyzer
+	url = https://github.com/patrickfrey/strusAnalyzer
 	branch = master
 [submodule "strusTrace"]
 	path = strusTrace
-	url = ../strusTrace
+	url = https://github.com/patrickfrey/strusTrace
 	branch = master
 [submodule "strusModule"]
 	path = strusModule
-	url = ../strusModule
+	url = https://github.com/patrickfrey/strusModule
 	branch = master
 [submodule "strusVector"]
 	path = strusVector
-	url = ../strusVector
+	url = https://github.com/patrickfrey/strusVector
 	branch = master
 [submodule "strusRpc"]
 	path = strusRpc
-	url = ../strusRpc
+	url = https://github.com/patrickfrey/strusRpc
 	branch = master
 [submodule "strusUtilities"]
 	path = strusUtilities
-	url = ../strusUtilities
+	url = https://github.com/patrickfrey/strusUtilities
 	branch = master
 [submodule "strusPattern"]
 	path = strusPattern
 	url = https://github.com/patrickfrey/strusPattern
+	branch = master
 [submodule "strusBindings"]
 	path = strusBindings
 	url = https://github.com/patrickfrey/strusBindings
+	branch = master
