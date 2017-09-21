@@ -11,6 +11,9 @@ case $OS in
 			cmake \
 			libboost-all-dev \
 			libleveldb-dev \
+			libatlas-dev \
+			liblapack-dev \
+			libblas-dev \
 			python3-dev \
 			libtre-dev \
 			ragel
