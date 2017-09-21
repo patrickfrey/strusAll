@@ -91,7 +91,7 @@ case $OS in
 		cd build
 		cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
 			-DLIB_INSTALL_DIR=lib -DCMAKE_CXX_FLAGS=-g \
-			-DWITH_JAVA="YES" -DWITH_PHP="YES" -DWITH_PYTHON="YES" \
+			-DWITH_PHP="YES" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES" \
 			..
 		make VERBOSE=1
 		make VERBOSE=1 CTEST_OUTPUT_ON_FAILURE=1 test
@@ -106,8 +106,7 @@ case $OS in
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
 				-DCMAKE_CXX_FLAGS=-g -G 'Unix Makefiles' \
-				-DWITH_JAVA="YES" -DWITH_PHP="YES" -DWITH_PYTHON="YES" \
-				-DPYTHON_LIBRARY="/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib" \
+				-DWITH_PHP="YES" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES"
 				..
 			make VERBOSE=1
 			ctest --verbose
@@ -120,8 +119,7 @@ case $OS in
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
 				-DCMAKE_CXX_FLAGS=-g -G Xcode \
-				-DWITH_JAVA="YES" -DWITH_PHP="YES" -DWITH_PYTHON="YES" \
-				-DPYTHON_LIBRARY="/usr/local/Cellar/python/2.7.11/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib" \
+				-DWITH_PHP="YES" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES"  \
 				..
 			xcodebuild -configuration Release -target ALL_BUILD
 			xcodebuild -configuration Release -target RUN_TESTS

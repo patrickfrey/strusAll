@@ -14,8 +14,8 @@ case $OS in
 			libsnappy-dev \
 			libleveldb-dev \
 			php7-dev php7-cli \
-			libtre-dev \
 			python3-dev \
+			libtre-dev \
 			ragel
 		;;
 
@@ -31,9 +31,9 @@ case $OS in
 			boost \
 			snappy \
 			leveldb \
-			tre \
 			homebrew/php/php7 \
 			python3 \
+			tre \
 			ragel \
 			|| true
 		# make sure cmake finds the brew version of gettext
