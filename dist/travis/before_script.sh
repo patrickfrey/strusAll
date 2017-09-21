@@ -11,7 +11,8 @@ case $OS in
 			cmake \
 			libboost-all-dev \
 			libleveldb-dev \
-			php7-dev php7-cli \
+			php7.0-dev \
+			php7.0-cli \
 			python3-dev \
 			libtre-dev \
 			ragel
