@@ -8,10 +8,8 @@ case $OS in
 	Linux)
 		sudo apt-get update -qq
 		sudo apt-get install -y \
-			cmake git \
-			gettext \
+			cmake \
 			libboost-all-dev \
-			libsnappy-dev \
 			libleveldb-dev \
 			php7-dev php7-cli \
 			python3-dev \
@@ -26,15 +24,13 @@ case $OS in
 			brew link --force gcc48 || true
 		fi
 		brew install \
-			cmake git \
-			gettext \
+			cmake \
 			boost \
-			snappy \
 			leveldb \
 			homebrew/php/php7 \
 			python3 \
 			tre \
-			ragel \
+			ragel
 			|| true
 		# make sure cmake finds the brew version of gettext
 		brew link --force gettext || true
@@ -48,7 +44,7 @@ case $OS in
 			brew reinstall leveldb --cc=gcc-4.8
 		fi
 		;;
-	
+
 	*)
 		echo "ERROR: unknown operating system '$OS'."
 		;;
