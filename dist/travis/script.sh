@@ -4,7 +4,7 @@ set -e
 
 OS=$(uname -s)
 
-PROJECT=strusBindings
+PROJECT=strusAll
 
 # set up environment
 case $OS in
