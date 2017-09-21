@@ -30,7 +30,7 @@ case $OS in
 			homebrew/php/php7 \
 			python3 \
 			tre \
-			ragel
+			ragel \
 			|| true
 		# make sure cmake finds the brew version of gettext
 		brew link --force gettext || true
