@@ -91,7 +91,7 @@ case $OS in
 		cd build
 		cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release \
 			-DLIB_INSTALL_DIR=lib -DCMAKE_CXX_FLAGS=-g \
-			-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES" \
+			-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO" \
 			..
 		make VERBOSE=1
 		make VERBOSE=1 CTEST_OUTPUT_ON_FAILURE=1 test
@@ -106,7 +106,7 @@ case $OS in
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
 				-DCMAKE_CXX_FLAGS=-g -G 'Unix Makefiles' \
-				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES"
+				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO"
 				..
 			make VERBOSE=1
 			ctest --verbose
@@ -119,7 +119,7 @@ case $OS in
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
 				-DCMAKE_CXX_FLAGS=-g -G Xcode \
-				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES"  \
+				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO"  \
 				..
 			xcodebuild -configuration Release -target ALL_BUILD
 			xcodebuild -configuration Release -target RUN_TESTS
