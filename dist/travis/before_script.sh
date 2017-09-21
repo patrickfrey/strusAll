@@ -11,8 +11,6 @@ case $OS in
 			cmake \
 			libboost-all-dev \
 			libleveldb-dev \
-			php7.0-dev \
-			php7.0-cli \
 			python3-dev \
 			libtre-dev \
 			ragel
@@ -28,7 +26,6 @@ case $OS in
 			cmake \
 			boost \
 			leveldb \
-			homebrew/php/php7 \
 			python3 \
 			tre \
 			ragel \
