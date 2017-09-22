@@ -36,7 +36,6 @@ cd ..
 for i in $DEPS; do
 	git clone `echo $GITURL | sed "s@/$PROJECT\.@/$i.@g"` $i
 	cd $i
-	git checkout travis
 	case $OS in
 		Linux)
 			mkdir build
@@ -106,7 +105,7 @@ case $OS in
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
 				-DCMAKE_CXX_FLAGS=-g -G 'Unix Makefiles' \
-				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO"
+				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO" \
 				..
 			make VERBOSE=1
 			ctest --verbose
