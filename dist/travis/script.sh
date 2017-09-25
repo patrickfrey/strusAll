@@ -62,7 +62,7 @@ case $OS in
 			cd build
 			cmake \
 				-DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
-				-DCMAKE_CXX_FLAGS=-g -G Xcode -Wno-error=format-nonliteral -Wno-error=format-security \
+				-DCMAKE_CXX_FLAGS='-g -Wno-error=format-nonliteral -Wno-error=format-security' -G Xcode \
 				-DWITH_PHP="NO" -DWITH_PYTHON="YES" -DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="NO" \
 				..
 			xcodebuild -configuration Release -target ALL_BUILD
