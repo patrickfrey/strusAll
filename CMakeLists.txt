@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
+# must be done BEFORE project in order to work!
+include(cmake/install_prefix.cmake)
+
 set( CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" )
 include( cmake/cxx11.cmake )
 check_for_cxx11_compiler(HAVE_CXX11)
