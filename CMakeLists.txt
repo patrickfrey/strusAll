@@ -16,6 +16,7 @@ include( cmake/boost.cmake )
 include( cmake/intl.cmake )
 include( cmake/find_strus_package.cmake )
 include( cmake/find_tre.cmake )
+include( cmake/find_leveldb.cmake )
 include( cmake/build_rules.cmake )
 find_package( Threads )
 
