@@ -18,6 +18,7 @@ include( cmake/intl.cmake )
 include( cmake/find_strus_package.cmake )
 include( cmake/find_tre.cmake )
 include( cmake/find_leveldb.cmake )
+include( cmake/link_rules.cmake )
 find_package( Threads )
 
 set( STRUS_ALL 1 )
