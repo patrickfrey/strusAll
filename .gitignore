@@ -3,4 +3,5 @@ CMakeFiles/
 CTestTestfile.cmake
 Makefile
 build/
+build_clang/
 cmake_install.cmake
