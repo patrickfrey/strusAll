@@ -13,8 +13,8 @@ You need to set the following environment variables if you build StrusAll with
 PHP7 support (-DWITH_PHP=YES) for the correct installation of PHP7 from the
 repository "ppa:ondrej/php".
 
-	ENV LANG "en_US.UTF-8"
-	ENV LC_ALL "en_US.UTF-8"
+	LANG "en_US.UTF-8"
+	LC_ALL "en_US.UTF-8"
 
 ## StrusAll has the following CMake flags
 	-DWITH_PHP=YES
@@ -31,7 +31,7 @@ each of these flags toggled to YES another section.
 
 ## Common packages needed always
 	boost-all >= 1.53 (>= 1.57, if -DWITH_STRUS_VECTOR=YES)
-	snappy-dev leveldb-dev libuv-dev zlib1g
+	snappy-dev leveldb-dev libuv-dev
 
 ## Packages needed with -DWITH_STRUS_PATTERN=YES
 	libtre-dev
