@@ -8,14 +8,6 @@ gcc >= 4.9 (has C++11 support). StrusAll can also be built with C++98.
 # Prerequisites
 Install packages with 'apt-get'/aptitude.
 
-## Environment
-You need to set the following environment variables if you build StrusAll with
-PHP7 support (-DWITH_PHP=YES) for the correct installation of PHP7 from the
-repository "ppa:ondrej/php".
-
-	LANG "en_US.UTF-8"
-	LC_ALL "en_US.UTF-8"
-
 ## StrusAll has the following CMake flags
 	-DWITH_PHP=YES
 	to enable build with Php 7 language bindings.
@@ -44,12 +36,6 @@ each of these flags toggled to YES another section.
 
 ## Packages needed with -DWITH_STRUS_PHP=YES
 	php7.0-dev zlib1g-dev libxml2-dev
-
-	(Before installing php7.0-dev, install the repository ppa:ondrej/php like follows:
-		$ locale-gen en_US.UTF-8
-		$ add-apt-repository -y ppa:ondrej/php
-		$ apt-get update
-	)
 
 # Configure with GNU C/C++ compiler
 	With all bindings and strusVector and strusPattern enabled:
