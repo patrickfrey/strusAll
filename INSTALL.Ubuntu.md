@@ -38,7 +38,7 @@ each of these flags toggled to YES another section.
 	php7.0-dev zlib1g-dev libxml2-dev
 
 # Configure with GNU C/C++ compiler
-	With all bindings and strusVector and strusPattern enabled:
+	With Lua,Php7 and Python3 bindings and strusVector and strusPattern:
 	$ cmake -DCMAKE_BUILD_TYPE=Release \
 		-DWITH_PYTHON=YES \
 		-DWITH_PHP=YES \
