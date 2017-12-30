@@ -3,12 +3,12 @@ Ubuntu 16.04 on x86_64, i686
 
 # Build system
 Cmake with gcc or clang. Here in this description we build with 
-gcc >= 4.9 (has C++11 support). StrusAll can also be built with C++98.
+gcc >= 4.9 (has C++11 support). Build with C++98 is possible.
 
 # Prerequisites
 Install packages with 'apt-get'/aptitude.
 
-## StrusAll has the following CMake flags
+## CMake flags
 	-DWITH_PHP=YES
 	to enable build with Php 7 language bindings.
 	-DWITH_PYTHON=YES
@@ -21,25 +21,32 @@ Install packages with 'apt-get'/aptitude.
 The prerequisites are listen in 5 sections, a common section (first) and for
 each of these flags toggled to YES another section.
 
-## Common packages needed always
-	boost-all >= 1.53 (>= 1.57, if -DWITH_STRUS_VECTOR=YES)
+## Required packages (always)
+	boost-all >= 1.53 (>= 1.57, if -DWITH_STRUS_PATTERN=YES)
 	snappy-dev leveldb-dev libuv-dev
 
-## Packages needed with -DWITH_STRUS_PATTERN=YES
-	libtre-dev
+## Required packages with -DWITH_STRUS_PATTERN=YES
+	ragel libtre-dev boost-all >= 1.57
 
-## Packages needed with -DWITH_STRUS_VECTOR=YES
-	ragel atlas-dev lapack-dev blas-dev boost-all >= 1.57
+## Required packages with -DWITH_STRUS_VECTOR=YES
+	atlas-dev lapack-dev blas-dev
 
-## Packages needed with -DWITH_STRUS_PYTHON=YES
+## Required packages with -DWITH_STRUS_PYTHON=YES
 	python3-dev
 
-## Packages needed with -DWITH_STRUS_PHP=YES
+## Required packages with -DWITH_STRUS_PHP=YES
 	php7.0-dev zlib1g-dev libxml2-dev
+
+# Fetch sources
+	git clone https://github.com/patrickfrey/strusAll
+	cd strusAll
+	git submodule update --init --recursive
+	git submodule foreach --recursive git checkout master
+	git submodule foreach --recursive git pull
 
 # Configure with GNU C/C++ compiler
 	With Lua,Php7 and Python3 bindings and strusVector and strusPattern:
-	$ cmake -DCMAKE_BUILD_TYPE=Release \
+	cmake -DCMAKE_BUILD_TYPE=Release \
 		-DWITH_PYTHON=YES \
 		-DWITH_PHP=YES \
 		-DWITH_STRUS_VECTOR=YES \
@@ -50,15 +57,15 @@ each of these flags toggled to YES another section.
 	Minimal build, only Lua bindings without Vector and Pattern and
 	a reasonable default for library installation directory:
 
-	$ cmake -DCMAKE_BUILD_TYPE=Release \
+	cmake -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" .
 
 # Build
-	$ make
+	make
 
 # Run tests
-	$ make test
+	make test
 
 # Install
-	$ make install
+	make install
 
