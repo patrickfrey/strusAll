@@ -15,6 +15,7 @@ include( cmake/find_tre.cmake )
 include( cmake/find_leveldb.cmake )
 include( cmake/link_rules.cmake )
 include( cmake/intl.cmake )
+include( cmake/cppcheck.cmake )
 
 find_package( Threads )
 set( STRUS_ALL 1 )
