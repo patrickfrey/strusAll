@@ -25,7 +25,8 @@ case $OS in
 		brew update
 		brew upgrade cmake
 		brew upgrade boost
-		brew install cmake gettext snappy leveldb python3 tre ragel || true
+		brew upgrade python
+		brew install cmake gettext snappy leveldb tre ragel || true
 		# make sure cmake finds the brew version of gettext
 		brew link --force gettext || true
 		brew link leveldb || true
