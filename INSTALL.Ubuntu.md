@@ -51,7 +51,7 @@ each of these flags toggled to YES another section.
 		-DWITH_PHP=YES \
 		-DWITH_STRUS_VECTOR=YES \
 		-DWITH_STRUS_PATTERN=YES \
-		-DLIB_INSTALL_DIR=/usr/local/lib .
+		-DLIB_INSTALL_DIR=lib .
 
 # Configure with Clang C/C++ compiler
 	Minimal build, only Lua bindings without Vector and Pattern and
