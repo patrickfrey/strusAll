@@ -33,12 +33,13 @@ matrix:
       compiler: gcc
       env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO
 # Thu Jan 10: strusVector is currently disabled for OSX, we still have building problems with armadillo there:
+# Fri Jan 11: strusPattern is currently disabled for OSX, because we reach the maximum job length. It is tested with strusBindings
     - os: osx
       compiler: clang
-      env: STRUS_WITH_PYTHON=YES STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=YES
+      env: STRUS_WITH_PYTHON=YES STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO
     - os: osx
       compiler: clang
-      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=YES
+      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO
     - os: linux
       dist: trusty
       compiler: clang
