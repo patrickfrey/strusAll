@@ -18,6 +18,10 @@ include( cmake/intl.cmake )
 include( cmake/libdl.cmake )
 include( cmake/cppcheck.cmake )
 
+if (WITH_STRUS_PATTERN STREQUAL "YES")
+include( cmake/find_hyperscan.cmake )
+endif (WITH_STRUS_PATTERN STREQUAL "YES")
+
 find_package( Threads )
 set( STRUS_ALL 1 )
 
@@ -61,7 +65,11 @@ if(WITH_STRUS_PATTERN STREQUAL "YES")
         set( struspattern_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/strusPattern/include )
         add_subdirectory( strusPattern )
 	set( STRUS_PATTERN_BINARY_DIR "${PROJECT_BINARY_DIR}/strusPattern/src" )
-endif()
+	if( DEFINED HYPERSCAN_PKGCONFIG )
+		file( COPY  "${HYPERSCAN_PKGCONFIG}"  DESTINATION  ${CMAKE_BINARY_DIR}/ )
+		# ... PF:HACK For hyperscan as submodule with out of source build
+	endif( DEFINED HYPERSCAN_PKGCONFIG )
+endif(WITH_STRUS_PATTERN STREQUAL "YES")
 add_subdirectory( strusRpc )
 add_subdirectory( strusUtilities )
 # temporarily disabled
