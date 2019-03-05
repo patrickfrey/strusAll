@@ -1,0 +1,52 @@
+OSX
+---
+# The software is regurarly built on OSX with travis, see https://travis-ci.org/patrickfrey/,
+#   build description in dist/travis/before_script.sh and dist/travis/script.sh
+
+# Steps:
+# 1) Install Homebrew from http://brew.sh/:
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# 2.1) Install required packages:
+
+brew install cmake boost snappy leveldb
+
+# 2.2) Install packages required if strus vector is enabled (-DWITH_STRUS_VECTOR=YES):
+
+brew install lapack openblas armadillo
+
+# 2.3) Install packages required if strus pattern is enabled (-DWITH_STRUS_PATTERN=YES):
+
+brew install tre ragel
+
+# 3) Install gettext with brew, draw necessary links:
+
+brew install gettext
+brew link --force gettext
+echo 'export PATH="/usr/local/opt/gettext/bin:$PATH"' >> ~/.bash_profile
+
+# 4.1) Install php70 when building the Php bindings (-DWITH_PHP=YES):
+
+brew tap homebrew/homebrew-php
+brew install php70
+
+# 4.2) Install python3 when building the Python bindings (-DWITH_PYTON=YES):
+
+brew install python3
+
+# 4) If support for pattern matching is build (-DWITH_STRUS_PATTERN=YES), build and install hyperscan (tag v4.7.0, build with shared libs) from source.
+
+# 5) Build strusAll with:
+
+cmake -G Xcode -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
+	-DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES" \
+	-DWITH_PHP="YES" -DWITH_PYTHON="YES" -DWITH_LUA="YES" .
+
+xcodebuild -configuration Release -target ALL_BUILD
+xcodebuild -configuration Release -target install
+
+# 6) Running the tests:
+
+xcodebuild -configuration Release -target RUN_TESTS
+
