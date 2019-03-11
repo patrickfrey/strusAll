@@ -38,3 +38,6 @@
 	path = strusBindings
 	url = https://github.com/patrickfrey/strusBindings
 	branch = master
+[submodule "strusWebService"]
+	path = strusWebService
+	url = git@github.com:patrickfrey/strusWebService

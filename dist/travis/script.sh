@@ -19,7 +19,7 @@ build_dep_project() {
 			sudo make install
 			cd ..
 			;;
-	
+
 		Darwin)
 			# forcing brew versions (of gettext) over Mac versions
 			export CFLAGS=-I/usr/local
@@ -82,6 +82,7 @@ build_strus_project() {
 
 # build pre-requisites
 
+cd ..
 if test "x$STRUS_WITH_PATTERN" = "xYES"; then
 	# install hyperscan
 	git clone https://github.com/intel/hyperscan.git
@@ -89,6 +90,17 @@ if test "x$STRUS_WITH_PATTERN" = "xYES"; then
 	build_dep_project "-DBUILD_SHARED_LIBS=1"
 	cd ..
 fi
+
+if test "x$STRUS_WITH_WEBSERVICE" = "xYES"; then
+	wget https://sourceforge.net/projects/cppcms/files/cppcms/1.0.5/cppcms-1.0.5.tar.bz2
+	bzip2 -d cppcms-1.0.5.tar.bz2
+	tar -xvf cppcms-1.0.5.tar
+	cd cppcms-1.0.5
+	cmake .
+	sudo make install
+	cd ..
+fi
+cd $PROJECT
 
 DEPS=""
 GITURL=`git config remote.origin.url`
@@ -106,7 +118,8 @@ done
 
 # build the package itself
 cd $PROJECT
-build_strus_project "-DWITH_PHP=${STRUS_WITH_PHP} -DWITH_PYTHON=${STRUS_WITH_PYTHON} -DWITH_LUA=${STRUS_WITH_LUA} -DWITH_STRUS_VECTOR=${STRUS_WITH_VECTOR} -DWITH_STRUS_PATTERN=${STRUS_WITH_PATTERN}"
+echo "BUILD $PROJECT WITH -DWITH_PHP=${STRUS_WITH_PHP} -DWITH_PYTHON=${STRUS_WITH_PYTHON} -DWITH_LUA=${STRUS_WITH_LUA} -DWITH_STRUS_WEBSERVICE=${STRUS_WITH_WEBSERVICE} -DWITH_STRUS_VECTOR=${STRUS_WITH_VECTOR} -DWITH_STRUS_PATTERN=${STRUS_WITH_PATTERN}"
+build_strus_project "-DWITH_PHP=${STRUS_WITH_PHP} -DWITH_PYTHON=${STRUS_WITH_PYTHON} -DWITH_LUA=${STRUS_WITH_LUA} -DWITH_STRUS_WEBSERVICE=${STRUS_WITH_WEBSERVICE} -DWITH_STRUS_VECTOR=${STRUS_WITH_VECTOR} -DWITH_STRUS_PATTERN=${STRUS_WITH_PATTERN}"
 cd ..
 
 

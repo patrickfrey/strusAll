@@ -28,22 +28,25 @@ each of these flags toggled to YES another section.
 ## Required packages with -DWITH_STRUS_PATTERN=YES
 	ragel libtre-dev boost-all >= 1.57 hyperscan >= 4.7
 	
-### Install hyperscan from sources
+## Required packages with -DWITH_STRUS_VECTOR=YES
+	atlas-dev lapack-dev blas-dev libarmadillo-dev
+
+## Required packages with -DWITH_PYTHON=YES
+	python3-dev
+
+## Required packages with -DWITH_PHP=YES
+	php7.0-dev zlib1g-dev libxml2-dev
+
+## Required packages with -DWITH_STRUS_WEBSERVICE=YES
+	libcurl4-openssl-dev zlib1g-dev libpcre3-dev
+
+### Install hyperscan from sources with -DWITH_STRUS_PATTERN=YES
 	git clone https://github.com/intel/hyperscan.git
 	mkdir hyperscan/build
 	cd hyperscan/build
 	cmake ..
 	make
 	make install
-
-## Required packages with -DWITH_STRUS_VECTOR=YES
-	atlas-dev lapack-dev blas-dev libarmadillo-dev
-
-## Required packages with -DWITH_STRUS_PYTHON=YES
-	python3-dev
-
-## Required packages with -DWITH_STRUS_PHP=YES
-	php7.0-dev zlib1g-dev libxml2-dev
 
 # Fetch sources
 	git clone https://github.com/patrickfrey/strusAll

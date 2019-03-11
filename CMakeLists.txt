@@ -15,6 +15,10 @@ IF (WITH_STRUS_PATTERN STREQUAL "YES")
 include( cmake/find_tre.cmake )
 include( cmake/find_hyperscan.cmake )
 ENDIF (WITH_STRUS_PATTERN STREQUAL "YES")
+IF (WITH_STRUS_WEBSERVICE STREQUAL "YES")
+include( cmake/FindCURL.cmake )
+include( cmake/FindCppCms.cmake )
+ENDIF (WITH_STRUS_WEBSERVICE STREQUAL "YES")
 include( cmake/find_leveldb.cmake )
 include( cmake/link_rules.cmake )
 include( cmake/intl.cmake )
@@ -44,6 +48,8 @@ set( strusutilities_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/strusUtilities/include ${
 set( strusutilities_LIBRARY_DIRS ${CMAKE_CURRENT_BINARY_DIR}/strusUtilities )
 set( strusbindings_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/strusBindings/include ${CMAKE_CURRENT_BINARY_DIR}/strusBindings/include )
 set( strusbindings_LIBRARY_DIRS ${CMAKE_CURRENT_BINARY_DIR}/strusBindings )
+set( struswebservice_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/strusWebService/include ${CMAKE_CURRENT_BINARY_DIR}/strusWebService/include )
+set( struswebservice_LIBRARY_DIRS ${CMAKE_CURRENT_BINARY_DIR}/strusWebService )
 
 enable_testing( )
 
@@ -75,6 +81,9 @@ endif(WITH_STRUS_PATTERN STREQUAL "YES")
 
 add_subdirectory( strusRpc )
 add_subdirectory( strusUtilities )
-# temporarily disabled
 add_subdirectory( strusBindings )
+IF (WITH_STRUS_WEBSERVICE STREQUAL "YES")
+	set( struswebservice_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/strusWebService/include )
+	add_subdirectory( strusWebService )
+ENDIF (WITH_STRUS_WEBSERVICE STREQUAL "YES")
 

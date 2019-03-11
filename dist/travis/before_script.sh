@@ -32,12 +32,14 @@ case $OS in
 			sudo LC_ALL=en_US.UTF-8 apt-get update
 			sudo LC_ALL=en_US.UTF-8 apt-get install -y php7.0 php7.0-dev
 		fi
+		if test "x$STRUS_WITH_WEBSERVICE" = "xYES"; then
+			sudo apt-get install -y libcurl4-openssl-dev zlib1g-dev libpcre3-dev
+		fi
 		;;
 
 	Darwin)
 		brew update
 		brew upgrade cmake
-		# -- brew upgrade boost
 		if test "x$STRUS_WITH_PHP" = "xYES"; then
 			brew install openssl php71 || true
 		fi
@@ -52,8 +54,10 @@ case $OS in
 		if test "x$STRUS_WITH_PATTERN" = "xYES"; then
 			brew install tre ragel
 		fi
+		if test "x$STRUS_WITH_WEBSERVICE" = "xYES"; then
+			brew install curl
+		fi
 		;;
-
 	*)
 		echo "ERROR: unknown operating system '$OS'."
 		;;

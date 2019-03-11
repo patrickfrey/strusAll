@@ -35,13 +35,19 @@ brew install php70
 
 brew install python3
 
-# 4) If support for pattern matching is build (-DWITH_STRUS_PATTERN=YES), build and install hyperscan (tag v4.7.0, build with shared libs) from source.
+# 4.3) Install packages required when building the web service bindings (-DWITH_STRUS_WEBSERVICE=YES):
+brew install curl
+
+# 4.4) If the web service build is enabled (-DWITH_STRUS_WEBSERVICE=YES), download and install cppcms (version 1.0.5.)
+
+# 4.5) If support for the pattern matching is built (-DWITH_STRUS_PATTERN=YES), build and install hyperscan (tag v4.7.0, build with shared libs) from source.
 
 # 5) Build strusAll with:
 
 cmake -G Xcode -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release \
-	-DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES" \
-	-DWITH_PHP="YES" -DWITH_PYTHON="YES" -DWITH_LUA="YES" .
+	-DWITH_STRUS_VECTOR="YES" -DWITH_STRUS_PATTERN="YES"/"NO" \
+	-DWITH_PHP="YES"/"NO" -DWITH_PYTHON="YES"/"NO" -DWITH_LUA="YES"/"NO" \
+	-DWITH_STRUS_WEBSERVICE="YES"/"NO" .
 
 xcodebuild -configuration Release -target ALL_BUILD
 xcodebuild -configuration Release -target install
