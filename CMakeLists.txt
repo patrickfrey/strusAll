@@ -24,6 +24,7 @@ include( cmake/link_rules.cmake )
 include( cmake/intl.cmake )
 include( cmake/libdl.cmake )
 include( cmake/cppcheck.cmake )
+include( cmake/destination.cmake )
 
 if (WITH_STRUS_PATTERN STREQUAL "YES")
 include( cmake/find_hyperscan.cmake )
