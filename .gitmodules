@@ -40,4 +40,4 @@
 	branch = master
 [submodule "strusWebService"]
 	path = strusWebService
-	url = git@github.com:patrickfrey/strusWebService
+	url = https://github.com/patrickfrey/strusWebService
