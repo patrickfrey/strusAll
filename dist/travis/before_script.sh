@@ -9,11 +9,8 @@ case $OS in
 		sudo apt-get update -qq
 		sudo apt-get install -y \
 			cmake \
-			libleveldb-dev
-		# Boost 1.58
-		sudo add-apt-repository -y ppa:kojoley/boost
-		sudo apt-get -q update
-		sudo apt-get install libboost-atomic1.58-dev libboost-thread1.58-dev libboost-system1.58-dev libboost-filesystem1.58-dev libboost-regex1.58-dev
+			libleveldb-dev \
+			libboost-all-dev
 
 		if test "x$STRUS_WITH_VECTOR" = "xYES"; then
 			sudo apt-get install -y libatlas-dev liblapack-dev libblas-dev libarmadillo-dev
@@ -27,10 +24,7 @@ case $OS in
 		if test "x$STRUS_WITH_PHP" = "xYES"; then
 			sudo apt-get install -y libssl-dev
 			sudo apt-get install -y language-pack-en-base
-			sudo locale-gen en_US.UTF-8
-			sudo LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
-			sudo LC_ALL=en_US.UTF-8 apt-get update
-			sudo LC_ALL=en_US.UTF-8 apt-get install -y php7.0 php7.0-dev
+			sudo apt-get install -y php7.0 php7.0-dev
 		fi
 		if test "x$STRUS_WITH_WEBSERVICE" = "xYES"; then
 			sudo apt-get install -y libcurl4-openssl-dev zlib1g-dev libpcre3-dev

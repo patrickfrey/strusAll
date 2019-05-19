@@ -105,6 +105,9 @@ cd $PROJECT
 DEPS=""
 GITURL=`git config remote.origin.url`
 cd ..
+if test "x_$STRUS_WITH_WEBSERVICE" = "x_YES"; then
+	STRUS_BINDINGS_FLAGS="-DWITH_WEBREQUST=YES"
+fi
 for i in $DEPS; do
 	git clone `echo $GITURL | sed "s@/$PROJECT\.@/$i.@g"` $i
 	cd $i
@@ -112,6 +115,11 @@ for i in $DEPS; do
 	git submodule foreach --recursive git checkout master
 	git submodule foreach --recursive git pull
 
+	if test "x_$i" = "x_strusBindings"; then
+		build_strus_project "$STRUS_BINDINGS_FLAGS"
+	else
+		build_strus_project ""
+	fi
 	build_strus_project ""
 	cd ..
 done
