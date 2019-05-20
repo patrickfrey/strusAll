@@ -96,7 +96,7 @@ if test "x$STRUS_WITH_WEBSERVICE" = "xYES"; then
 	bzip2 -d cppcms-1.0.5.tar.bz2
 	tar -xvf cppcms-1.0.5.tar
 	cd cppcms-1.0.5
-	cmake -DCMAKE_CXX_FLAGS="-Wno-deprecated -Wshadow=compatible-local -Wno-unused-local-typedefs" .
+	cmake -DCMAKE_CXX_FLAGS="-Wno-deprecated -Wno-unused-local-typedefs" .
 	sudo make install
 	cd ..
 fi
