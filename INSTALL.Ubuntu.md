@@ -26,8 +26,18 @@ each of these flags toggled to YES another section.
 	snappy-dev leveldb-dev libuv-dev
 
 ## Required packages with -DWITH_STRUS_PATTERN=YES
-	ragel libtre-dev boost-all >= 1.57 hyperscan >= 4.7
-	
+	ragel libtre-dev boost-all >= 1.57 hyperscan >= 5.1
+
+### Install hyperscan from sources with -DWITH_STRUS_PATTERN=YES
+	git clone https://github.com/intel/hyperscan.git
+	cd hyperscan
+	git checkout tags/v5.1.1
+	mkdir build
+	cd build
+	cmake ..
+	make
+	make install
+
 ## Required packages with -DWITH_STRUS_VECTOR=YES
 	atlas-dev lapack-dev blas-dev libarmadillo-dev
 
@@ -38,13 +48,14 @@ each of these flags toggled to YES another section.
 	php7.0-dev zlib1g-dev libxml2-dev
 
 ## Required packages with -DWITH_STRUS_WEBSERVICE=YES
-	libcurl4-openssl-dev zlib1g-dev libpcre3-dev
+	libcurl4-openssl-dev zlib1g-dev libpcre3-dev cppcms >= 1.2
 
-### Install hyperscan from sources with -DWITH_STRUS_PATTERN=YES
-	git clone https://github.com/intel/hyperscan.git
-	mkdir hyperscan/build
-	cd hyperscan/build
-	cmake ..
+### Install cppcms with -DSTRUS_WITH_WEBSERVICE=YES
+	wget https://sourceforge.net/projects/cppcms/files/cppcms/1.2.1/cppcms-1.2.1.tar.bz2
+	bzip2 -d cppcms-1.2.1.tar.bz2
+	tar -xvf cppcms-1.2.1.tar
+	cd cppcms-1.2.1
+	cmake -DCMAKE_CXX_FLAGS="-Wno-deprecated -Wno-unused-local-typedefs" .
 	make
 	make install
 
