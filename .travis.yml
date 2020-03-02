@@ -74,9 +74,12 @@ matrix:
       dist: xenial
       compiler: clang
       env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=YES
-    - os: osx
-      compiler: clang
-      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=YES
+
+# Mo Mar 2 2020: Disable strus webservice build on OSX as build logs get too long and are not accepted anymore, we rely on the build of the strusWebservice project here
+#    - os: osx
+#      compiler: clang
+#      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO
+# STRUS_WITH_WEBSERVICE=YES
 
 sudo: required
 branches:
