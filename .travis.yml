@@ -1,13 +1,6 @@
 language: cpp
 matrix:
   include:
-# Fri Jan 11: PHP7 is currently disabled for OSX, because of linking problems: No clue how to get -lcrypto installed. Installing openssl does not solve the problem
-    - os: osx
-      compiler: clang
-      env: STRUS_WITH_PYTHON=YES STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=NO
-    - os: osx
-      compiler: clang
-      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=NO
     - os: linux
       dist: xenial
       compiler: clang
@@ -31,14 +24,6 @@ matrix:
     - os: linux
       dist: xenial
       compiler: gcc
-      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=NO
-# Thu Jan 10: strusVector is currently disabled for OSX, we still have building problems with armadillo there:
-# Fri Jan 11: strusPattern is currently disabled for OSX, because we reach the maximum job length. It is tested with strusBindings
-    - os: osx
-      compiler: clang
-      env: STRUS_WITH_PYTHON=YES STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=NO
-    - os: osx
-      compiler: clang
       env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=YES STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=NO
     - os: linux
       dist: xenial
@@ -74,12 +59,6 @@ matrix:
       dist: xenial
       compiler: clang
       env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO STRUS_WITH_WEBSERVICE=YES
-
-# Mo Mar 2 2020: Disable strus webservice build on OSX as build logs get too long and are not accepted anymore, we rely on the build of the strusWebservice project here
-#    - os: osx
-#      compiler: clang
-#      env: STRUS_WITH_PYTHON=NO STRUS_WITH_PHP=NO STRUS_WITH_LUA=NO STRUS_WITH_VECTOR=NO STRUS_WITH_PATTERN=NO
-# STRUS_WITH_WEBSERVICE=YES
 
 sudo: required
 branches:
